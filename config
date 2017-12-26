@@ -13,11 +13,11 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-#set $mod Mod4
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:monospace 8
+font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -209,7 +209,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+m focus right
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -221,7 +221,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+m move right
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -256,7 +256,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 
@@ -300,7 +300,7 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -392,28 +392,53 @@ workspace 9 output $secondMonitor
 workspace 10 output $secondMonitor
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+section workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+exclam workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+#bindsym $mod+ampersand workspace 1
+#bindsym $mod+eacute workspace 2
+#bindsym $mod+quotedbl workspace 3
+#bindsym $mod+apostrophe workspace 4
+#bindsym $mod+parenleft workspace 5
+#bindsym $mod+section workspace 6
+#bindsym $mod+egrave workspace 7
+#bindsym $mod+exclam workspace 8
+#bindsym $mod+ccedilla workspace 9
+#bindsym $mod+agrave workspace 10
+#
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1; workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2; workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3; workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+section move container to workspace 6; workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7; workspace 7
-bindsym $mod+Shift+exclam move container to workspace 8; workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9; workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10; workspace 10
+#bindsym $mod+Shift+ampersand move container to workspace 1; workspace 1
+#bindsym $mod+Shift+eacute move container to workspace 2; workspace 2
+#bindsym $mod+Shift+quotedbl move container to workspace 3; workspace 3
+#bindsym $mod+Shift+apostrophe move container to workspace 4; workspace 4
+#bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+#bindsym $mod+Shift+section move container to workspace 6; workspace 6
+#bindsym $mod+Shift+egrave move container to workspace 7; workspace 7
+#bindsym $mod+Shift+exclam move container to workspace 8; workspace 8
+#bindsym $mod+Shift+ccedilla move container to workspace 9; workspace 9
+#bindsym $mod+Shift+agrave move container to workspace 10; workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
 
 
 ################### MOUSE ######################
@@ -439,22 +464,22 @@ bindsym $mod+Shift+agrave move container to workspace 10; workspace 10
 
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
-
-assign [class="Firefox|Vivaldi-stable|Opera"]                                       → 1
-assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]       → 2
-assign [class="Xed|xed|Brackets|Atom|Code"]                                         → 2
-assign [class="Inkscape"]                                                           → 3
-assign [class="Gimp"]                                                               → 4
-assign [class="ristretto|Ristretto|shotwell|Shotwell|Xviewer"]                      → 5
-assign [class="Meld"]                                                               → 5
-assign [class="feh|gthumb|Gthumb|eog|Eog|Pinta|pixeluvo|Pixeluvo"]                  → 5
-assign [class="Vlc|vlc"]                                                            → 6
-assign [class="Vmplayer|VirtualBox"]                                                → 7
-assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"]                                 → 8
-assign [class="Geary|Evolution"]                                                    → 9
-assign [class="Spotify|spotify"]                                                    → 10
-#fix for spotify not moving to workspace 10
-for_window [class="Spotify"] move to workspace 10
+#
+#assign [class="Firefox|Vivaldi-stable|Opera"]                                       → 1
+#assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]       → 2
+#assign [class="Xed|xed|Brackets|Atom|Code"]                                         → 2
+#assign [class="Inkscape"]                                                           → 3
+#assign [class="Gimp"]                                                               → 4
+#assign [class="ristretto|Ristretto|shotwell|Shotwell|Xviewer"]                      → 5
+#assign [class="Meld"]                                                               → 5
+#assign [class="feh|gthumb|Gthumb|eog|Eog|Pinta|pixeluvo|Pixeluvo"]                  → 5
+#assign [class="Vlc|vlc"]                                                            → 6
+#assign [class="Vmplayer|VirtualBox"]                                                → 7
+#assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"]                                 → 8
+#assign [class="Geary|Evolution"]                                                    → 9
+#assign [class="Spotify|spotify"]                                                    → 10
+##fix for spotify not moving to workspace 10
+#for_window [class="Spotify"] move to workspace 10
 
 
 ################### EXECUTE ######################
@@ -465,9 +490,9 @@ for_window [class="Spotify"] move to workspace 10
 # num lock activated
 exec_always --no-startup-id numlockx on
 # dropbox
-exec dropbox start
+#exec dropbox start
 # insync
-exec insync start
+#exec insync start
 # volume
 exec pasystray
 #exec volti
@@ -476,7 +501,7 @@ exec pasystray
 exec variety
 
 # clipit
-exec clipit
+#exec clipit
 
 
 # USER APPLICATIONS
@@ -484,15 +509,15 @@ exec clipit
 #distro dependent applications are at bottom of config like filemanager ...
 
 #browsers
-exec firefox
-for_window [class="Firefox"] focus
+#exec firefox
+#for_window [class="Firefox"] focus
 
 #Mail clients
 #exec evolution
 
 #Music
-exec --no-startup-id spotify
-for_window [class="Spotify"] focus
+#exec --no-startup-id spotify
+#for_window [class="Spotify"] focus
 
 #Conky
 #exec ~/.config/i3/start-conkys.sh
@@ -507,27 +532,27 @@ for_window [class="Spotify"] focus
 #mod1 = ALT
 
 #workspace 1 related
-bindsym $mod+F1 exec firefox;workspace 1;focus
-bindsym control+mod1+f exec firefox;workspace 1; focus
-bindsym control+mod1+v exec vivaldi-stable;workspace 1; focus
+#bindsym $mod+F1 exec firefox;workspace 1;focus
+#bindsym control+mod1+f exec firefox;workspace 1; focus
+#bindsym control+mod1+v exec vivaldi-stable;workspace 1; focus
 
 #workspace 2 related
 #sublime text see at bottom distro dependent
 
 #workspace 3 related
-bindsym $mod+F3 exec inkscape;workspace 3;focus
-bindsym control+mod1+i exec inkscape;workspace 3;focus
+#bindsym $mod+F3 exec inkscape;workspace 3;focus
+#bindsym control+mod1+i exec inkscape;workspace 3;focus
 
 #workspace 4 related
-bindsym $mod+F4 exec gimp;workspace 4;focus
-bindsym control+mod1+g exec gimp;workspace 4;focus
+#bindsym $mod+F4 exec gimp;workspace 4;focus
+#bindsym control+mod1+g exec gimp;workspace 4;focus
 
 #workspace 5 related
-bindsym $mod+F5 exec meld;workspace 5;focus
-bindsym control+mod1+m exec meld;workspace 5;focus
-
+#bindsym $mod+F5 exec meld;workspace 5;focus
+#bindsym control+mod1+m exec meld;workspace 5;focus
+#
 #workspace 6 related
-bindsym $mod+F6 exec vlc;workspace 6;focus
+#bindsym $mod+F6 exec vlc;workspace 6;focus
 
 #workspace 7 related
 
@@ -535,17 +560,17 @@ bindsym $mod+F6 exec vlc;workspace 6;focus
 # filemanagers see at bottom distro dependent
 
 #workspace 9 related
-bindsym $mod+F9 exec evolution;workspace 9;focus
-bindsym control+mod1+e exec evolution;workspace 9;focus
+#bindsym $mod+F9 exec evolution;workspace 9;focus
+#bindsym control+mod1+e exec evolution;workspace 9;focus
 #bindsym $mod+F9 exec geary;workspace 9;focus
 #bindsym control+mod1+e exec geary;workspace 9;focus
-
+#
 #workspace 10 related
-bindsym $mod+F10 exec spotify;workspace 10;focus
-bindsym control+mod1+s exec spotify;workspace 10;focus
+#bindsym $mod+F10 exec spotify;workspace 10;focus
+#bindsym control+mod1+s exec spotify;workspace 10;focus
 
 #catfish
-bindsym control+mod1+c exec catfish;focus
+#bindsym control+mod1+c exec catfish;focus
 
 ################### SHORTCUTS WORKSPACES ######################
 
@@ -561,7 +586,7 @@ bindsym Mod1+Ctrl+Right workspace next
 bindsym Mod1+Ctrl+Left workspace prev
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+#for_window [urgent=latest] focus
 
 
 ################### SCREENSHOTS ######################
@@ -713,7 +738,7 @@ new_float normal
 
 # AZERTY KEYBOARD
 # Change this if you use qwerty
-exec setxkbmap be
+#exec setxkbmap us
 
 
 ###################       UNCLUTTER      ##############################
@@ -729,10 +754,10 @@ exec unclutter
 
 bar {
 
-    height 25
+    height 17 
     workspace_buttons yes
     # font pango:DroidSansMono 13
-    font pango:Noto Sans 14
+    font pango:Noto Sans 10
     #you can change the place via xrandr
     #output DVI-0
 
@@ -883,8 +908,8 @@ client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 for_window [class="^.*"] border pixel 5
 gaps inner 10 
 gaps outer 5
-#smart_gaps on
-#smart_borders on
+smart_gaps on
+smart_borders on
 
 
 ###########################################################################
@@ -977,18 +1002,18 @@ bindsym control+Shift+Escape exec gnome-system-monitor;focus
 #workspace 2 related
 #bindsym $mod+F2 exec subl;workspace 2;focus
 #bindsym control+mod1+w exec subl;workspace 2;focus
-bindsym $mod+F2 exec subl3;workspace 2;focus
-bindsym control+mod1+w exec subl3;workspace 2;focus
+#bindsym $mod+F2 exec subl3;workspace 2;focus
+#bindsym control+mod1+w exec subl3;workspace 2;focus
 
 #workspace 8 related
-bindsym $mod+F8 exec nemo --no-desktop;workspace 8;focus
+#bindsym $mod+F8 exec nemo --no-desktop;workspace 8;focus
 #bindsym $mod+F8 exec nautilus --no-desktop;workspace 8;focus
 #bindsym $mod+F8 exec caja;workspace 8;focus
 #bindsym $mod+F8 exec thunar;workspace 8;focus
 
 #file managers
 
-exec nemo --no-desktop
+#exec nemo --no-desktop
 #exec nautilus --no-desktop
 #exec caja
 #exec thunar
@@ -999,7 +1024,7 @@ for_window [class="Nautilus"] focus
 for_window [class="Caja"] focus
 for_window [class="Thunar"] focus
 
-bindsym $mod+Shift+Return exec nemo --no-desktop; workspace 8;focus
+#bindsym $mod+Shift+Return exec nemo --no-desktop; workspace 8;focus
 #bindsym $mod+Shift+Return exec nautilus --no-desktop; workspace 8;focus
 #bindsym $mod+Shift+Return exec caja; workspace 8;focus
 #bindsym $mod+Shift+Return exec thunar; workspace 8;focus
@@ -1014,7 +1039,7 @@ bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
 
 #sublime-text
 #exec subl
-exec subl3
+#exec subl3
 
 #Authentication dialog
 
@@ -1036,7 +1061,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #exec pamac-tray
 
 # bluetooth
-exec blueberry-tray
+#exec blueberry-tray
 #exec --no-startup-id blueman-applet
 
 # network
@@ -1045,4 +1070,30 @@ exec --no-startup-id nm-applet
 
 #install this program for applet
 #exec network-manager-applet
+
+set $Locker i3lock && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+     # back to normal: Enter or Escape
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+} 
+    
+bindsym $mod+Escape mode "$mode_system"
+
+# # Sreen brightness controls
+set $brightness_step 5 
+bindsym XF86MonBrightnessUp exec xbacklight -inc $brightness_step  # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec $brightness_step  # decrease screen brightness
+
+# Startup programs
+exec --no-startup-id redshift-gtk
 
